@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Custos Mensais</title>
+    </head>
+
+    <body>
+        <header>
+            <img src="logo.png" id="logo-cabecalho">
+
+            <form>
+                <h1>Simulação de despesas mensais para empresa enquadrada no <br>simples nacional</h1>
+                
+                <span class="span-faturamento">
+                    <label for="input-faturamento">Faturamento:</label>
+                    <input type="text" id="input-faturamento" placeholder="Digite o faturamento">
+                </span>
+                
+                <span class="span-mensalidade">
+                    <label for="input-mensalidade">Mensalidade:</label>
+                    <input type="text" id="input-mensalidade" placeholder="Digite a mensalidade">
+                </span>
+
+                <button>Calcular</button>
+            </form>
+        </header>
+
+        <main>
+            <ul class="area-impressao">
+            </ul>
+        </main>
+
+        <footer>
+            <h2>Matriz Soluções Contábeis</h2>
+            <p>Av Leonardo Villas Boas, 2188 - Vila Nova Botucatu | CEP 18608-227 | Botucatu / SP</p>
+            <p>contato@matrizcontabilidade.com.br • (14) 3814-6919 / (14) 3882-2786</p>
+        </footer>
+
+        <script src="js/bases.js"></script>
+        <script src="js/calculos_timeout.js"></script>
+    </body>
+</html>

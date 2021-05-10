@@ -3,9 +3,9 @@ html {
 }
 
 body {
-	background: linear-gradient(135deg, #F8F8F8 0%, #EEEEEE 50%);
 	width: 100%;
-	height: 100%;
+	height: 100vh;
+	background: linear-gradient(135deg, #F8F8F8 45%, #EEEEEE 45%);
 }
 
 header {
@@ -13,7 +13,7 @@ header {
 }
 
 h1 {
-	font-size: 1.3em;
+	font-size: 1.4em;
 	font-weight: bold;
 	text-transform: uppercase;
 	padding-bottom: 1.5em;
@@ -26,12 +26,11 @@ form {
 	display: inline-block;
 	right: 50%;
 	transform: translate(50%);
-	top: 35px;
-	
+	top: 55px;
 }
 
 #logo-cabecalho {
-    width: 180px;
+    width: 200px;
 	margin: 1em 1em 1em 1em;
 }
 
@@ -90,6 +89,7 @@ button:active {
 	padding-bottom: 0.5em;
 	text-align: left;
 	font-size: 1.4em;
+	font-weight: bold;
 }
 
 .total {
@@ -118,7 +118,7 @@ footer {
 }
 
 h2 {
-	padding-bottom: 0.3em;
+	padding: 0.3em 0 0.3em 0;
 	font-weight: bold;
 	font-size: 1.05em;
 }

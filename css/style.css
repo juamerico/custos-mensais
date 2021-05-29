@@ -1,46 +1,155 @@
-html {
+:root {
+	--bg-color: linear-gradient(135deg, #F8F8F8 50%, #EEEEEE 50%);
+	--texto-botao: #eeebdd;
+	--cor-botao: #99423F;
+	--sombra-botao: #7A3735;
+	--botao-pressionado: #9b403d;
+}
+
+/* ALINHAMENTOS DA VERSÃO MOBILE */
+html, input {
+	font-size: 14px;
     font-family: 'Hind', sans-serif;
+	/* height: 100vh; !!1024!!*/
 }
 
-body {
-	width: 100%;
-	height: 100vh;
-	background: linear-gradient(135deg, #F8F8F8 45%, #EEEEEE 45%);
+input {
+	font-weight: bold;
 }
 
-header {
-	top: 0;
+main {
+	background: var(--bg-color);
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto auto 20rem;
+	row-gap: 4rem;
+	padding: 0 10% 10% 10%;
+}
+
+.logo {
+	grid-row: 1 / 1;
+	width: 70%;
+	place-self: center;
+	margin-top: 3rem;
 }
 
 h1 {
-	font-size: 1.4em;
-	font-weight: bold;
+	font-size: 1.3rem;
+	/* font-weight: bold; */
 	text-transform: uppercase;
-	padding-bottom: 1.5em;
 }
 
+label {
+	display: none;
+}
+
+/* FORMULÁRIO */
 form {
-	width: 60%;
+	grid-row: 2 / 2;
+	width: 100%;
 	text-align: center;
-	position: absolute;
-	display: inline-block;
-	right: 50%;
-	transform: translate(50%);
-	top: 55px;
+
+	display: grid;
+	grid-template-rows: auto;
+	row-gap: 1rem;
 }
 
-#logo-cabecalho {
-    width: 200px;
-	margin: 1em 1em 1em 1em;
+#input__faturamento, #input__mensalidade {
+	width: 100%;
+	height: 3rem;
+	text-align: center;
 }
 
-#input-mensalidade, #input-faturamento {
+#input__faturamento::placeholder, #input__mensalidade::placeholder {
+	font-size: 1.1rem;
+	text-align: center;
+	font-weight: lighter;
+}
+
+button {
+	/* cursor: pointer; !!!1024!!! */
+	place-self: end;
+	font-size: 1.1rem;
+	width: 50%;
+	height: 3rem;
+	color: var(--texto-botao);
+	background-color: var(--cor-botao);
+	border: none;
 	border-radius: 5px;
-	margin: 0 10px 0 0;
-	height: 2em;
 	transition: 0.2s;
+	box-shadow: inset -2px -2px var(--sombra-botao);
 }
 
+button:active {
+	transform: translate(1px, 1px);
+	box-shadow: none;
+	background-color: var(--botao-pressionado);
+}
+
+
+/* AREA DE IMPRESSAO */
+.area-impressao {
+	align-self: center;
+	place-self: start;
+	grid-row: 3 / 3;
+
+	/* width: auto;
+	text-align: center; */
+
+	opacity: 0.6;
+	transition: 0.12s;
+}
+
+.fade-in {
+	opacity: 1;
+}
+
+.resultado {
+	padding-bottom: 0.5rem;
+	text-align: left;
+	font-size: 1.5rem;
+	/* font-weight: bold; */
+}
+
+.total {
+	font-size: 2em;
+	/* font-weight: bold; */
+	text-align: left;
+	padding: 0.5em 0em;
+}
+
+.aliquota {
+	font-size: 1em;
+	text-align: left;
+	/* font-weight: bold; */
+}
+
+.aliquota:after {
+	content: "%";
+}
+
+footer {
+	background-image: url("padrao.png\'");
+	width: 100%;
+	text-align: right;
+}
+
+address {
+	padding: 1rem;
+}
+
+h2, p, a {
+	text-decoration: none;
+	color: var(--texto-botao);
+}
+
+h2 {
+	font-weight: bold;
+	font-size: 1.2rem;
+	padding-bottom: .5rem;
+}
+
+/* 
 #input-mensalidade:hover, #input-faturamento:hover {
 	transform: scale(1.01);
 }
@@ -68,63 +177,26 @@ button:active {
 	background-color: #9b403d;
 }
 
-.area-impressao {
-	width: auto;
-	text-align: center;
-	padding-bottom: 20px;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
+ */
 
-	opacity: 0.6;
-	transition: 0.12s;
-}
-
-
-.fade-in {
-	opacity: 1;
-}
-
-.resultado {
-	padding-bottom: 0.5em;
-	text-align: left;
-	font-size: 1.4em;
-	font-weight: bold;
-}
-
-.total {
-	font-size: 2em;
-	font-weight: bold;
-	text-align: left;
-	padding: 0.5em 0em;
-}
-
-.aliquota {
-	font-size: 1em;
-	text-align: left;
-	font-weight: bold;
-}
-
-.aliquota:after {
-	content: "%";
-}
-
-footer {
+/* footer {
 	bottom: 0;
-	position: absolute;
 	background-image: url("padrao.png\'");
 	width: 100%;
 	padding: 0.8em 0em 0.8em 0em;
-}
+} */
 
-h2 {
+/* h2 {
 	padding: 0.3em 0 0.3em 0;
 	font-weight: bold;
 	font-size: 1.05em;
 }
 
-h2, p {
+h2, a, p {
 	text-align: right;
-	padding-right: 1em;
 	color: #eeebdd;
 }
+
+address {
+	padding-right: 2%;
+} */

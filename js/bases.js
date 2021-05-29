@@ -12,8 +12,8 @@ var areaImpressao = document.querySelector(".area-impressao");
 
 var botao = document.querySelector("button");
 
-var faturamento = document.querySelector("#input-faturamento");
-var mensalidade = document.querySelector("#input-mensalidade");
+var faturamento = document.querySelector("#input__faturamento");
+var mensalidade = document.querySelector("#input__mensalidade");
 
 var simples;
 var proLabore;

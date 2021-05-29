@@ -2,43 +2,47 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="stylesheet" href="css/reset.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
+
         <title>Custos Mensais</title>
     </head>
 
     <body>
-        <header>
-            <img src="logo.png" id="logo-cabecalho">
+        <main>
+            <img src="logo.png" class="logo" alt="Logo Matriz Soluções Contábeis">
 
             <form>
-                <h1>Simulação de despesas mensais para empresa enquadrada no <br>simples nacional</h1>
+                <h1>Simulação de despesas mensais para empresa enquadrada no simples nacional</h1>
                 
-                <span class="span-faturamento">
-                    <label for="input-faturamento">Faturamento:</label>
-                    <input type="text" id="input-faturamento" placeholder="Digite o faturamento">
+                <span class="span__faturamento">
+                    <label for="input__faturamento">Faturamento:</label>
+                    <input type="text" id="input__faturamento" placeholder="Digite o faturamento">
                 </span>
                 
-                <span class="span-mensalidade">
-                    <label for="input-mensalidade">Mensalidade:</label>
-                    <input type="text" id="input-mensalidade" placeholder="Digite a mensalidade">
+                <span class="span__mensalidade">
+                    <label for="input__mensalidade">Mensalidade:</label>
+                    <input type="text" id="input__mensalidade" placeholder="Digite a mensalidade">
                 </span>
 
                 <button>Calcular</button>
             </form>
-        </header>
 
-        <main>
             <ul class="area-impressao">
             </ul>
         </main>
 
         <footer>
-            <h2>Matriz Soluções Contábeis</h2>
-            <p>Av Leonardo Villas Boas, 2188 - Vila Nova Botucatu | CEP 18608-227 | Botucatu / SP</p>
-            <p>contato@matrizcontabilidade.com.br • (14) 3814-6919 / (14) 3882-2786</p>
+            <address>
+                <h2>Matriz Soluções Contábeis</h2>
+                <p>Av Leonardo Villas Boas, 2188 - Vila Nova Botucatu | CEP 18608-227 | Botucatu / SP</p>
+
+                <p><a href="mailto:contato@matrizcontabilidade.com.br">contato@matrizcontabilidade.com.br</a> • <a href="tel:+551438146919">(14) 3814-6919</a> / <a href="tel:+551438822786">(14) 3882-2786</a></p>
+            </address>
         </footer>
 
         <script src="js/bases.js"></script>

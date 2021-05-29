@@ -1,0 +1,84 @@
+ @media screen and (min-width: 1024px) {
+    html, input {
+        font-size: 16px;
+    }
+
+    body {
+        height: 100vh;
+    }
+
+    main {
+        grid-template-columns: 15vw auto;
+        grid-template-rows: auto;
+        gap: 0;
+        padding: 3%;
+        height: 100%;
+    }
+
+    .logo {
+        grid-row: 1 / 2;
+        margin-top: 0;
+        width: 100%;
+        place-self: start;
+    }
+
+    label {
+        display: unset;
+        font-size: 1.2rem;
+    }
+
+    form {
+        grid-area: 1 / 2 / 3 / 3;
+        grid-template-columns: 15fr 20fr 1px 20fr 1px 2fr 15fr;
+        grid-template-rows: 3rem 3rem;
+        row-gap: 2rem;
+        max-height: 180px;
+    }
+
+    #input__faturamento, #input__mensalidade {
+        height: 2rem;
+        width: 50%;
+        border-radius: 5px;
+    }
+
+    #input__faturamento::placeholder, #input__mensalidade::placeholder {
+        font-size: .9rem;
+    }
+
+    #input__mensalidade:hover, #input__faturamento:hover {
+        transform: scale(1.01);
+        transition: .8s;
+    }
+
+    h1 {
+        grid-column: 1 / 8;
+        font-weight: bold;
+        align-self: end;
+    }
+
+    .span__faturamento {
+        grid-area: 2 / 2 / 2 / 2;
+        width: 100%;
+    }
+
+    .span__mensalidade {
+        grid-area: 2 / 4 / 2 / 4;
+        width: 100%;
+    }
+
+    button {
+        grid-area: 2 / 6 / 2 / 6;
+        align-self: start;
+        justify-self: start;
+        width: 100%;
+        height: 2.3rem;
+        cursor: pointer;
+    }
+
+    .area-impressao {
+        grid-area: 2 / 2 / 2 / 2;
+        place-self: center;
+        padding-bottom: 3%;
+        transform: translateY(-30%);
+    }
+}

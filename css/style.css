@@ -12,12 +12,15 @@ html, input {
     font-family: 'Hind', sans-serif;
 }
 
+body {
+	background: var(--bg-color);
+}
+
 input {
 	font-weight: bold;
 }
 
 main {
-	background: var(--bg-color);
 	display: grid;
 	grid-template-columns: auto;
 	grid-template-rows: auto auto auto;
@@ -36,6 +39,7 @@ h1 {
 	font-size: 1.3rem;
 	/* font-weight: bold; */
 	text-transform: uppercase;
+	place-self: center;
 }
 
 label {
@@ -54,9 +58,10 @@ form {
 }
 
 #input__faturamento, #input__mensalidade {
-	width: 100%;
+	width: 98%;
 	height: 3rem;
 	text-align: center;
+	margin-top: 1rem;
 }
 
 #input__faturamento::placeholder, #input__mensalidade::placeholder {
@@ -67,6 +72,7 @@ form {
 
 button {
 	place-self: end;
+	margin-top: 1rem;
 	font-size: 1.1rem;
 	width: 50%;
 	height: 3rem;

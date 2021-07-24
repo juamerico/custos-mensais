@@ -1,83 +1,46 @@
-function botaoCalcular(event) {
-    areaImpressao.textContent = "";
+import {imprime} from "./imprime.js"
+import calculaSimples from "./calculos/simples.js"
+import calculaProLabore from "./calculos/proLabore.js"
+import calculaInss from "./calculos/inss.js"
+import calculaIrrf from "./calculos/irrf.js"
+import calculaTotal from "./calculos/total.js"
+import calculaAliquotaEfetiva from "./calculos/aliquotaEfetiva.js"
 
-    event.preventDefault();
+const areaImpressao = document.querySelector(".area-impressao")
+const botao = document.querySelector("button")
+const faturamento = document.querySelector("#input__faturamento")
+const mensalidade = document.querySelector("#input__mensalidade")
 
-    imprime("Faturamento: R$", Number(faturamento.value).toFixed(2));
+function botaoCalcular(e) {
+    areaImpressao.textContent = ""
+    e.preventDefault()
 
-    calculaSimples(faturamento);
-    imprime("Simples: R$", simples.toFixed(2));
+    const valorFaturamento = faturamento.value
+    const textoFaturamento = `Faturamento: R$ ${Number(valorFaturamento).toFixed(2)}`
+    imprime(textoFaturamento)
+ 
+    let simples = 0
+    calculaSimples(valorFaturamento, simples)
+    
+    let proLabore = 0
+    proLabore = calculaProLabore(valorFaturamento, proLabore)
 
-    calculaProLabore(faturamento);
-    imprime("Pro Labore: R$", proLabore.toFixed(2));
+    let inss = 0
+    calculaInss(proLabore, inss)
 
-    calculaInss(proLabore);
-    imprime("INSS: R$ ", inss.toFixed(2));
+    let irrf = 0
+    calculaIrrf(proLabore, irrf)
 
-    calculaIrrf(proLabore);
-    if (irrf > 0) {
-        imprime("IRRF: R$", irrf.toFixed(2));
-    } else {
-        imprime("IRRF: ", "Isento");
-    }
+    const valorMensalidade = mensalidade.value
+    const textoMensalidade = `Mensalidade escritório: R$ ${Number(valorMensalidade).toFixed(2)}`
+    imprime(textoMensalidade)
 
-    imprime("Mensalidade escritório: R$", Number(mensalidade.value).toFixed(2));
+    let total = 0
+    total = calculaTotal(total, valorMensalidade, simples, irrf, inss)
 
-    calculaTotal();
-    imprimeTotal(total.toFixed(2));
-
-    calculaAliquotaEfetiva(total, faturamento);
-    imprimeAliquota(aliquotaEfetiva.toFixed(2));
+    calculaAliquotaEfetiva(total, valorFaturamento)
 }
 
 //
-
-function calculaSimples(faturamento) {
-    simples = Number(faturamento.value) * 0.06;
-    return simples;
-}
-
-function calculaProLabore(faturamento) {
-    proLabore = Number(faturamento.value) * 0.28;
-    return proLabore;
-}
-
-function calculaInss(proLabore) {
-    if (proLabore > tetoInss) {
-        return inss = 707.69;
-    } if (proLabore <= tetoInss) {
-        return inss = proLabore * 0.11;
-    }
-}
-
-function calculaIrrf(proLabore) {
-    if (proLabore >= baseIrrf[0] && proLabore <= baseIrrf[1]) {
-        return irrf = 0;
-    }
-    if (proLabore >= baseIrrf[2] && proLabore <= baseIrrf[3]) {
-        return irrf = Number((proLabore * aliquotaIrrf[1]) - deducaoIrrf[1]);
-    }
-    if (proLabore >= baseIrrf[4] && proLabore <= baseIrrf[5]) {
-        return irrf = Number(proLabore * aliquotaIrrf[2] - deducaoIrrf[2]);
-    }
-    if (proLabore >= baseIrrf[6] && proLabore <= baseIrrf[7]) {
-        return irrf = Number(proLabore * aliquotaIrrf[3] - deducaoIrrf[3]);
-    }
-    if (proLabore > baseIrrf[7]) {
-        return irrf = Number(proLabore * aliquotaIrrf[4] - deducaoIrrf[4]);
-    }
-}
-
-function calculaTotal() {
-    total = Number(mensalidade.value) + simples + irrf + inss;
-    return total;
-}
-
-function calculaAliquotaEfetiva(total, faturamento) {
-    aliquotaEfetiva = (total * 100) / Number(faturamento.value);
-    return aliquotaEfetiva;
-}
-
-
-botao.addEventListener("click", botaoCalcular);
-faturamento.focus();
+botao.addEventListener("click", botaoCalcular)
+faturamento.focus()

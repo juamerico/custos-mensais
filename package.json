@@ -1,0 +1,23 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juamerico/custos-mensais.git"
+  },
+  "author": "Juliana Americo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juamerico/custos-mensais/issues"
+  },
+  "homepage": "https://github.com/juamerico/custos-mensais#readme",
+  "devDependencies": {
+    "eslint": "^7.28.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}

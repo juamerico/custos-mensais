@@ -20,16 +20,16 @@ function botaoCalcular(e) {
     imprime(textoFaturamento)
  
     let simples = 0
-    calculaSimples(valorFaturamento, simples)
+    simples = calculaSimples(valorFaturamento, simples)
     
     let proLabore = 0
     proLabore = calculaProLabore(valorFaturamento, proLabore)
 
     let inss = 0
-    calculaInss(proLabore, inss)
+    inss = calculaInss(proLabore, inss)
 
     let irrf = 0
-    calculaIrrf(proLabore, irrf)
+    irrf = calculaIrrf(proLabore, irrf)
 
     const valorMensalidade = mensalidade.value
     const textoMensalidade = `Mensalidade escritório: R$ ${Number(valorMensalidade).toFixed(2)}`

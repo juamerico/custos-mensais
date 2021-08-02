@@ -25,7 +25,7 @@ const deducaoIrrf = [
 
 function calculaIrrf(proLabore, irrf) {
     if (proLabore >= baseIrrf[0] && proLabore <= baseIrrf[1]) {
-        irrf = "ISENTO"
+        irrf = 0
         const textoIrrf = `IRRF: ISENTO`
         imprime(textoIrrf)
     }
